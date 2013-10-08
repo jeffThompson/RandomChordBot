@@ -1,11 +1,10 @@
-Would You Rather Bot
+Random Chord Bot
 =================
 
-A Twitter bot that creates random "would you rather?" questions.
+A Twitter bot that creates random guitar chord.
 
-If my math serves:  
-* 2,826 nouns x 769 verbs X 2 combinations = 4,346,388 possible Tweets
-* At 2 minutes between = 1509 days = about 4 years of Tweets...
+If my math serves, at 6 strings and 5 frets = 40,920 possible chords.  
+At a Tweet every hour, that means it will take ~4.67 years to complete.
 
 **LOAD OAUTH SETTINGS**  
 Assumes Twitter OAuth settings, saved in a file
@@ -18,12 +17,11 @@ called OAuthSettings.py, saved in the following format:
       'access_token_secret': 'xxxx'
     }
 
-**WORD LISTS VIA**  
-* http://dictionary-thesaurus.com/wordlists.html
+**UNICODE CHARACTERS VIA**
+* http://www.busydoingnothing.co.uk/emoji.html
+* http://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 **REQUIRES**
-* Natural Language Toolkit (NLTK)  
-http://nltk.org 
 * OAuthlib  
 https://github.com/requests/requests-oauthlib
 * Python Twitter  
