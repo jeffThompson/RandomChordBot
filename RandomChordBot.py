@@ -101,7 +101,7 @@ try:
 	if status.text == chord_string:
 		print '  post successful!'
 	else:
-		print '  error posting, sorry! :('
+		print '  \nerror posting, sorry! :('
 	print '\n\n'
 
 except twitter.TwitterError:
