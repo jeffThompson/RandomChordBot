@@ -94,16 +94,10 @@ chord_string = chord_string.strip()
 # catch any errors and let us know
 try:
 	api = twitter.Api(consumer_key = consumer_key, consumer_secret = consumer_secret, access_token_key = access_token_key, access_token_secret = access_token_secret)	
-
 	print '\n\n' + chord_string + '\n\n'
 	print 'posting to Twitter...'
 	status = api.PostUpdate(chord_string)
-	if status.text == chord_string:
-		print '  post successful!'
-	else:
-		print '  \nerror posting, sorry! :('
-	print '\n\n'
-
+	print '  post successful!'
 except twitter.TwitterError:
 	print api.message
 
