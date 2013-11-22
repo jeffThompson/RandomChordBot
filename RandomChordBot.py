@@ -34,6 +34,8 @@ UNICODE CHARACTERS VIA
 from OAuthSettings import settings				# import from settings.py
 import random															# for random chord position
 import twitter														# for posting to Twitter
+import os																	# for getting current directory
+from sys import exit											# for exiting when done posting
 
 # VARIABLES
 off = u'\u25fb'.encode('utf-8')		# unicode char for non-pressed fret
@@ -97,15 +99,17 @@ try:
 	print '\n\n' + chord_string + '\n\n'
 	print 'posting to Twitter...'
 	status = api.PostUpdate(chord_string)
-	print '  post successful!'
+	print '  post successful!\n\n'
 except twitter.TwitterError:
 	print api.message
 
 
 # SAVE TWEETS TO FILE
-# for posterity
-with open('Tweets.txt', 'a') as file:
+# get current directory, prepend to word list paths
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+with open(os.path.join(__location__, 'Tweets.txt'), 'a') as file:
 	file.write(chord_string + '\n\n')
 
 
 # ALL DONE!
+exit()
